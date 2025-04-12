@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&family=Rozha+One&display=swap');
+
+/* Analogous Colours:
+lilac: #8688BF;
+black: #0A0A0B;
+grey: #353434;
+white: #FFFFFF;
+
+Heading Font:
+"Rozha One", serif;
+
+Body Font:
+"Questrial", sans-serif;
+
+Font Sizes:
+Mobile View: 0.75rem
+Tablet View: 1rem
+Desktop View: 1.25rem
+
+Line Height:
+between 1.4 and 1.6 */
+
+:root {
+    /*Analogous Colours */
+    --lilac: #8688BF;
+    --black: #0A0A0B;
+    --grey: #353434;
+    --white: #FFFFFF;
+
+    /* Fonts */
+    --heading: "Rozha One", serif;
+    --bodyfont: "Questrial", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    font-family: var(--bodyfont);
+    color: var(--black);
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--heading);
+}
+
+h2,
+h3 {
+    text-align: center;
+}
+
+p {
+    text-align: left;
+}
+
+/* Header and Navigation styling */
+header {
+    background-color: var(--black);
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.header-container img {
+    height: 3.75rem;
+    margin-bottom: 1rem;
+}
+
+.mylogo {
+    transition: 0.4s ease;
+}
+
+.mylogo:hover {
+    transform: scale(1.1);
+}
+
+nav {
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    width: 100%;
+}
+
+nav li a {
+    display: block;
+    text-decoration: none;
+    color: var(--lilac);
+    padding: 0.8rem 0;
+    text-align: center;
+    width: 100%;
+    transition: 0.3s ease;
+}
+
+nav li a:hover {
+    color: white;
+    transform: translateY(-2px);
+    scale: 1.2;
+    transition: all 0.3s ease;
+}
+
+.masthead {
+    display: none;
+}
+
+/* Main Content styling */
+.wrapper {
+    width: 100%;
+    max-width: 60rem;
+    margin: 1rem auto;
+    padding: 0 1rem;
+}
+
+.content {
+    padding: 1.5rem;
+}
+
+.homepage h2 {
+    margin: 0.5em 0;
+    color: var(--grey);
+}
+
+figcaption {
+    text-align: center;
+    margin: 0.5em 0;
+    color: var(--grey);
+}
+
+em {
+    color: var(--grey);
+}
+
+.porttitle {
+    margin: 0.5em 0;
+    color: var(--grey);
+}
+
+.portcards {
+    margin: 2em 0;
+}
+
+.portcards p {
+    color: var(--grey);
+}
+
+.portgrid img {
+    box-shadow: 0 0 15px rgba(134, 136, 191, 0.4);
+    transition: all 0.3s ease;
+}
+
+.portgrid img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(134, 136, 191, 0.3);
+}
+
+
+
+/* Footer styling */
+footer {
+    background-color: var(--black);
+    padding: 1.5rem 0;
+    width: 100%;
+}
+
+footer p {
+    text-align: center;
+    color: var(--lilac);
+    margin-bottom: 1em;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+}
+
+footer a {
+    color: var(--lilac);
+    font-size: 1.2rem;
+}
+
+footer a:hover {
+    color: white;
+    transition: all 0.3s ease;
+}
+
+/* Styling for Tablet */
+@media only screen and (min-width: 35rem) {
+    body {
+        font-size: 1rem;
+    }
+
+    .mylogo {
+        max-width: 25%;
+        margin: auto;
+        padding-bottom: 1em;
+    }
+
+    .navbar::before {
+        display: none;
+    }
+
+    .navbar {
+        flex-direction: row;
+        gap: 4em;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    nav li {
+        width: auto;
+    }
+
+    nav li a {
+        padding: 0.5rem 1rem;
+        background-color: transparent;
+    }
+
+    .masthead {
+        background-image: url('../img/masthead.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem 1rem;
+    }
+
+    .masthead h1 {
+        font-size: 2.5rem;
+        color: var(--lilac);
+    }
+
+    .masthead h1,
+    p {
+        text-align: center;
+    }
+
+    .dimensions {
+        max-width: 40%;
+        float: left;
+        padding: 0.2em 1.5em 0 0;
+    }
+
+    .homepage::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .homepage p {
+        text-align: left;
+    }
+
+
+
+    .portgrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Styling for Desktop */
+@media only screen and (min-width: 80rem) {
+    body {
+        font-size: 1.25rem;
+    }
+
+    .mylogo {
+        margin-right: 5em;
+    }
+
+    .header-container {
+        max-width: 60rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+        margin: 0 auto;
+    }
+
+    nav ul {
+        gap: 2rem;
+        justify-content: flex-start;
+
+    }
+
+    .masthead {
+        justify-content: left;
+    }
+
+    .masthead h1 {
+        font-size: 2.8rem;
+        text-align: left;
+    }
+
+    .masthead p {
+        text-align: left;
+    }
+
+    .dimensions {
+        width: 20%;
+    }
+
+    .homepage h2 {
+        text-align: left;
+    }
+
+    .homepage p {
+        float: right;
+        width: 80%;
+        text-align: left;
+    }
+
+    .porttitle {
+        text-align: left;
+
+    }
+
+    .portgrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .portcards p {
+        text-align: center;
+    }
+
+    footer ul {
+        justify-content: flex-start;
+        margin: 0 auto;
+        padding-left: 1rem;
+        gap: 1.5em;
+    }
+
+    footer p {
+        text-align: left;
+    }
+}
